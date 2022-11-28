@@ -1,0 +1,59 @@
+
+<div class="h-96 max-h-screen flex items-center text-white px-10 object-cover bg-center bg-cover w-full"
+    style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/about.jpeg)">
+</div>
+<div id="about" class="max-w-7xl mx-auto">
+    {{ locales id="39dd7899-0c23-4f1a-afd3-713502eb8a52" current_first="true" }}
+        {{ if first }}
+            <div class="intro">
+                <h2>{{title}}</h2>
+                {{content | strip_tags:p}}
+            </div>
+        {{ /if }}
+    {{ /locales }}
+    {{ locales id="ff6e8219-0f97-49f1-bcb7-9914c0e01d5b" current_first="true" }}
+        {{ if first }}
+            <div class="intro">
+                <h2>{{title}}</h2>
+                {{content | strip_tags:p}}
+            </div>
+        {{ /if }}
+    {{ /locales }}
+</div>
+<div id="about" class="bg-gray-200 py-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+        <div>
+            {{ locales id="92536947-8f8d-4ddb-b1fa-a1562ffc950c" current_first="true" }}
+                {{ if first }}
+                    <div class="">
+                        {{ responsive:main_photo ratio="16/9" class="mb-4" }}
+                        <h3>{{title}}</h3>
+                        {{content | strip_tags:p}}
+                    </div>
+                {{ /if }}
+            {{ /locales }}
+        </div>
+        <div>
+            {{ locales id="aceef4cd-4fcc-41b3-a6c0-e18cf5e82e9a" current_first="true" }}
+                {{ if first }}
+                    <div class="">
+                        {{ responsive:main_photo ratio="16/9" class="mb-4" }}
+                        <h3>{{title}}</h3>
+                        {{content | strip_tags:p}}
+                    </div>
+                {{ /if }}
+            {{ /locales }}
+        </div>
+        <div>
+            {{ locales id="83400573-561d-4b09-b3db-f0637be3edc9" current_first="true" }}
+                {{ if first }}
+                    <div class="">
+                        {{ responsive:main_photo ratio="16/9" class="mb-4" }}
+                        <h3>{{title}}</h3>
+                        {{content | strip_tags:p}}
+                    </div>
+                {{ /if }}
+            {{ /locales }}
+        </div>
+    </div>
+</div>

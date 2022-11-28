@@ -1,1 +1,291 @@
 /* This is all you. */
+
+#about h2 {
+  @apply font-light text-3xl text-blue-900 uppercase mb-4
+}
+
+#about h3 {
+  @apply font-normal text-xl text-blue-900 uppercase mb-4
+}
+
+.intro {
+  @apply w-full md:w-2/3 px-8 py-8 text-gray-700 leading-relaxed
+}
+
+.intro ul {
+  @apply list-disc list-inside mb-8
+}
+
+.content p {
+  @apply mb-4
+}
+
+.content h3 {
+  @apply text-2xl mb-1 mt-4
+}
+
+.wordCarousel {
+  font-size: 36px;
+  font-weight: 100;
+  color: #333;
+}
+
+.wordCarousel div {
+  overflow: hidden;
+  position: relative;
+  height: 65px;
+  padding-top: 10px;
+  margin-top: -10px;
+}
+
+.wordCarousel div li {
+  font-weight: 700;
+  padding: 0;
+  height: 45px;
+  margin-bottom: 45px;
+  display: block;
+}
+
+
+.flip2 {
+  animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+.flip3 {
+  animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+.flip4 {
+  animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+.flip5 {
+  animation: flip5 12s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+@keyframes flip2 {
+  0% {
+    margin-top: -180px;
+  }
+
+  5% {
+    margin-top: -90px;
+  }
+
+  50% {
+    margin-top: -90px;
+  }
+
+  55% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -180px;
+  }
+}
+
+@keyframes flip3 {
+  0% {
+    margin-top: -270px;
+  }
+
+  5% {
+    margin-top: -180px;
+  }
+
+  33% {
+    margin-top: -180px;
+  }
+
+  38% {
+    margin-top: -90px;
+  }
+
+  66% {
+    margin-top: -90px;
+  }
+
+  71% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@keyframes flip4 {
+  0% {
+    margin-top: -360px;
+  }
+
+  5% {
+    margin-top: -270px;
+  }
+
+  25% {
+    margin-top: -270px;
+  }
+
+  30% {
+    margin-top: -180px;
+  }
+
+  50% {
+    margin-top: -180px;
+  }
+
+  55% {
+    margin-top: -90px;
+  }
+
+  75% {
+    margin-top: -90px;
+  }
+
+  80% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -360px;
+  }
+}
+
+@keyframes flip5 {
+  0% {
+    margin-top: -450px;
+  }
+
+  5% {
+    margin-top: -360px;
+  }
+
+  20% {
+    margin-top: -360px;
+  }
+
+  25% {
+    margin-top: -270px;
+  }
+
+  40% {
+    margin-top: -270px;
+  }
+
+  45% {
+    margin-top: -180px;
+  }
+
+  60% {
+    margin-top: -180px;
+  }
+
+  65% {
+    margin-top: -90px;
+  }
+
+  80% {
+    margin-top: -90px;
+  }
+
+  85% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -450px;
+  }
+}
+#menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 48px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #666;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+
+  [x-cloak] {
+    display: none;
+  }

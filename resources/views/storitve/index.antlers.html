@@ -1,0 +1,24 @@
+<div class="pb-16 h-96 text-center mb-12">
+    <img class="object-cover h-96 w-full" src="/img/tiles.jpeg" alt="">
+</div>
+<div class="content max-w-7xl mx-auto px-8">
+  {{ collection:storitve  }}
+    <div class="mb-20">
+        <div class="w-2/3">
+            <h2 class="text-3xl text-blue-900 font-bold mb-4 border-l-8 pl-4 border-red-500">{{ title }}</h2>
+            {{intro}}
+        </div>
+        <a class="block my-4 text-md font-medium text-rose-700 border border-rose-900 hover:bg-rose-700 hover:text-white transition-all duration-300 px-6 py-3 w-52" href="/kontakt">
+            Pošlji povpraševanje
+        </a>
+        <div class="grid grid-cols-6 gap-4 my-8 mb-12">
+            {{ assets:gallery }}
+                <a href="{{ url }}" class="glightbox">
+                    {{ responsive:url webp="true" avif="false" ratio="16/9" }}
+                </a>
+            {{ /assets:gallery }}
+        </div>
+
+    </div>
+  {{ /collection:storitve }}
+</div>

@@ -1,0 +1,78 @@
+<div class="bg-blue-900 py-2 px-8 text-white text-sm flex items-center justify-end sticky top-0 z-50">
+  <div class="mx-4">
+    <a href="tel:+386 70 612 299"><i class="fa-solid fa-phone"></i> +386 (0)70 612 299</a> (Bashkim)
+  </div>
+  <a href="/kontakt">
+    <button type="button"
+            class="inline-block px-6 py-1 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded-full hover:bg-green-500 hover:bg-opacity-55 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+      Pošljite povpraševanje
+    </button>
+  </a>
+  <a class="text-2xl hover:text-sky-500"
+     href="https://www.facebook.com/profile.php?id=100078817066898"
+     target="blank"><i class="fa-brands fa-facebook mx-3"></i></a>
+</div>
+<!--Nav-->
+<nav id="header"
+     class="w-full z-30 top-0 py-1">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-1">
+    <label for="menu-toggle"
+           class="cursor-pointer md:hidden block">
+      <svg class="fill-current text-gray-900"
+           xmlns="http://www.w3.org/2000/svg"
+           width="20"
+           height="20"
+           viewBox="0 0 20 20">
+        <title>menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </label>
+    <input class="hidden"
+           type="checkbox"
+           id="menu-toggle" />
+
+    <div class="order-1 md:order-1">
+      <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
+         href="{{ site:url }}">
+        <img src="/img/logo.png"
+             class="h-20"
+             alt="">
+      </a>
+    </div>
+
+    <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1"
+         id="menu">
+      <nav>
+        <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0 relative">
+          {{ nav:collection:pages }}
+          {{ if children }}
+          <li x-data="{ open: false }"
+              @mouseleave="open = false">
+            <a @mouseover="open = true"
+               class="no-underline relative border-b-2 border-white hover:border-b-2 hover:border-rose-700 mr-2 font-bold {{ if is_current }}border-b-2 text-gray-800 border-rose-700 {{ /if }} hover:text-black py-2 px-4"
+               href="{{ url }}">{{ title }}</a>
+            <div x-show="open"
+                 x-transition:enter.duration.500ms
+                 x-transition:leave.duration.800ms
+                 class="absolute  w-48 py-2 mt-2 bg-gray-100 shadow-xl">
+              <ul>
+                {{ children }}
+                <li><a class="font-bold inline-block w-full px-4 py-2 hover:bg-sky-200"
+                     href="{{ url }}">
+                    {{ title }}
+                  </a></li>
+                {{ /children }}
+              </ul>
+            </div>
+          </li>
+          {{ else }}
+          <a class="no-underline border-b border-white hover:border-b hover:border-gray-400 mr-2 font-normal {{ if is_current }}border-b text-rose-700 border-rose-700 {{ /if }} hover:text-gray-700 py-2 px-4"
+             href="{{ url }}">{{ title }}</a>
+          {{ endif }}
+          {{ /nav:collection:pages }}
+        </ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+</nav>
